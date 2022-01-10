@@ -2,7 +2,7 @@
 #It relies on environment variable named 'AddedFilesInPR' which comes from the github-action
 #triggering it. The value of this variable is a string of all added files in the PR.
 
-if ($env:AddedFilesInPR -match ".gitmodules1") {
+if ($env:AddedFilesInPR -match ".gitmodules") {
         echo "Submodule is added" 
         exit 1
 }
