@@ -1,0 +1,22 @@
+name: Check for submodules adds
+
+on:
+  pull_request:
+      branches:
+         - main
+
+jobs:
+  lint:
+    name: Check for submodules adds
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+      - name: Get submodules
+        id: changed-files-specific
+        uses: tj-actions/changed-files@v8.9
+      - name: Running check for submodules adds
+        shell: pwsh
+        run: ./git-submodule-check/git-submodule-check.ps1
+        env:
+         AddedFilesInPR: ${{ steps.changed-files-specific.outputs.added_files }}
