@@ -4,6 +4,7 @@
 
 if ($env:AddedFilesInPR -contains ".gitmodules") {
         echo "Submodule is added" 
+        exit 1
 }
 else {
      echo "No submodule was added"
