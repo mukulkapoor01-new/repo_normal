@@ -19,6 +19,7 @@ function getHeaders {
 
 $api = "https://api.github.com/repos/${github.repository}/pulls/${github.event.pull_request.number}/files"
 $response = Invoke-WebRequest -Headers $(getHeaders) -Uri $api -Method GET
+}
 else {
 echo "no submodule added"
 }
