@@ -1,8 +1,7 @@
 if ($env:AddedFilesInPR -match ".gitmodules")
 { echo "submodule was added"
 $a = git submodule status
-$b = $a.split(" ")[3]
-$b
+$a.Length
 }
 else {
 echo "no submodule added"
