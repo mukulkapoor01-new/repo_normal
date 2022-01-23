@@ -1,4 +1,4 @@
-$IsSubmoduleAdded = git submodule status
+$IsSubmoduleAdded = git submodule status --recursive
 if ($IsSubmoduleAdded -ne $null)
 { echo "submodule was added"
 $IsSubmoduleAdded | foreach-object {
