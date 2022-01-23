@@ -1,7 +1,7 @@
-$a = git submodule status
-if ($a -eq $null)
+$IsSubmoduleAdded = git submodule status
+if ($IsSubmoduleAdded -ne $null)
 { echo "submodule was added"
-$a | foreach-object {
+$IsSubmoduleAdded | foreach-object {
 $_.split(" ")[1]
 }}
 else {
