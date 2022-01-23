@@ -5,5 +5,5 @@ $IsSubmoduleAdded | foreach-object {
 $_.split(" ")[1]
 }}
 else {
-echo "no submodule added"
+echo "no submodule added."
 }
